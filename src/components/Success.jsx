@@ -1,10 +1,10 @@
 import logo from "../assets/images/iteration-1-images/logo.svg";
 
-const Success = () => {
+const Success = ({ summary }) => {
   return (
-    <div className="flex flex-col h-screen bg-[#CE2829] text-white">
-      {/* logo */}
-      <div className="flex justify-center mt-20">
+    <div className="flex flex-col min-h-screen bg-[#CE2829] text-white">
+      {/* Logo */}
+      <div className="flex justify-center my-12">
         <img
           src={logo}
           alt="Teknolojik Yemekler"
@@ -12,14 +12,62 @@ const Success = () => {
         />
       </div>
 
-      {/* icerik */}
+      {/* İçerik */}
       <div className="flex flex-col items-center justify-center flex-grow text-center">
-        <h1 className="text-4xl  font-bold mb-7 ">TEBRİKLER!</h1>
-        <h1 className="text-4xl  font-bold mb-7 ">SİPARİŞİNİZ ALINDI!</h1>
+        {/* Başlıklar */}
+        <div className="my-10">
+          <h1 className="text-3xl mb-2 satisfy-regular">lezzetin yolda</h1>
+          <h1 className="text-5xl font-bold mb-8 roboto-condensed-myFont">
+            SİPARİŞ ALINDI
+          </h1>
+        </div>
 
-        <p className="text-lg md:text-xl text-white">
-          En kısa sürede hazırlanıp yola çıkacak 🚀
-        </p>
+        <hr className="w-1/3 border-white/60 mb-10" />
+
+        {/* Sipariş Özeti */}
+        {summary && (
+          <>
+            <div className="font-semibold my-7">
+              Position Absolute Aci Pizza
+            </div>
+            <div className="bg-transparent p-6 w-full max-w-xs text-left font-semibold">
+              <ul className="space-y-2">
+                <li className="text-white/70">
+                  Ad Soyad: <span className="text-white">{summary.name}</span>
+                </li>
+                <li className="text-white/70">
+                  Boyut: <span className="text-white">{summary.size}</span>
+                </li>
+                <li className="text-white/70">
+                  Hamur: <span className="text-white">{summary.dough}</span>
+                </li>
+                <li className="text-white/70">
+                  Ek Malzemeler:{" "}
+                  <span className="text-white">
+                    {summary.extras?.join(", ")}
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sipariş Toplamı Kartı */}
+            <div className="my-8 p-6 w-full max-w-xs border border-white/40 rounded-lg text-left">
+              <h6 className="mb-4 font-semibold text-center">
+                Sipariş Toplamı
+              </h6>
+              <div className="space-y-4">
+                <p className="flex justify-between">
+                  <span>Seçimler:</span>
+                  <span>{summary.extras?.length * 5 * summary.quantity}₺</span>
+                </p>
+                <p className="flex justify-between">
+                  <span>Toplam:</span>
+                  <span>{summary.total} ₺</span>
+                </p>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

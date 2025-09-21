@@ -76,8 +76,8 @@ const OrderPizza = ({ onSuccess }) => {
       );
 
       console.log("Sipariş Özeti:", response.data);
-      toast.success("Sipariş başarıyla alındı!");
-      onSuccess();
+      toast.success("Bizi Tercih Ettiginiz Icin Tesekkur Ederiz!");
+      onSuccess(orderData);
     } catch (error) {
       console.error("Sipariş oluşturulamadı:", error);
       toast.error("Sipariş sırasında bir hata oluştu.");

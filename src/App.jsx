@@ -6,7 +6,10 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  //sayfayi tutatn setter
   const [currentPage, setCurrentPage] = useState("home");
+  //success sayfasina order bilgisini gondermek icin setter
+  const [orderSummary, setOrderSummary] = useState(null);
 
   return (
     <>
@@ -14,9 +17,15 @@ function App() {
         <Home goToOrder={() => setCurrentPage("order")} />
       )}
       {currentPage === "order" && (
-        <OrderPizza onSuccess={() => setCurrentPage("success")} />
+        <OrderPizza
+          onSuccess={(orderData) => {
+            // orderi success sayfasına taşıyoruz
+            setOrderSummary(orderData);
+            setCurrentPage("success");
+          }}
+        />
       )}
-      {currentPage === "success" && <Success />}
+      {currentPage === "success" && <Success summary={orderSummary} />}
       <ToastContainer />
     </>
   );

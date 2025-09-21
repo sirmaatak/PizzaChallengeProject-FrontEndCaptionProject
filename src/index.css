@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
@@ -6,6 +9,24 @@
 .label-left {
   text-align: left !important;
   display: block;
+}
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color:#FDC913;
+}
+.roboto-condensed-myFont {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  
+}
+.quattrocento-regular {
+  font-family: "Quattrocento", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @layer components {
@@ -34,4 +55,7 @@
   .section-title {
     @apply text-lg font-semibold text-left;
   }
+  .transparan-label {
+  @apply text-white/70;
+}
 }
