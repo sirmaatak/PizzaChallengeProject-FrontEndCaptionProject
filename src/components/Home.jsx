@@ -1,7 +1,7 @@
 import logo from "../assets/images/iteration-1-images/logo.svg";
 import homeBanner from "../assets/images/iteration-1-images/home-banner.png";
 
-const Home = () => {
+const Home = ({ goToOrder }) => {
   return (
     <div
       className="relative flex flex-col items-center justify-start h-screen text-white bg-cover bg-center"
@@ -16,7 +16,9 @@ const Home = () => {
       </h1>
 
       {/* Siparis verme sayfasina git butonu */}
-      <button className="btn-home">ACIKTIM</button>
+      <button className="btn-home" onClick={goToOrder}>
+        ACIKTIM
+      </button>
     </div>
   );
 };

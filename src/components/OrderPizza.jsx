@@ -3,8 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../assets/images/iteration-1-images/logo.svg";
+import axios from "axios";
 
-const OrderPizza = () => {
+const OrderPizza = ({ onSuccess }) => {
   const ingredientsList = [
     "Pepperoni",
     "Domates",
@@ -54,10 +55,34 @@ const OrderPizza = () => {
     setTotal(newTotal);
   };
 
-  const onSubmit = (data) => {
-    const orderData = { ...data, quantity, total };
-    console.log(orderData);
-    toast.success("Sipariş başarıyla alındı!");
+  // form submit edildiginde yapilacaklar
+  const onSubmit = async (data) => {
+    const apiKey = "reqres-free-v1";
+    const orderData = {
+      ...data,
+      quantity,
+      total,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://reqres.in/api/users",
+        orderData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+
+      console.log("Sipariş Özeti:", response.data);
+      toast.success("Sipariş başarıyla alındı!");
+      onSuccess();
+    } catch (error) {
+      console.error("Sipariş oluşturulamadı:", error);
+      toast.error("Sipariş sırasında bir hata oluştu.");
+    }
   };
 
   useEffect(() => {
@@ -254,7 +279,13 @@ const OrderPizza = () => {
             <Controller
               control={control}
               name="name"
-              rules={{ required: "Ad Soyad zorunludur" }}
+              rules={{
+                required: "Ad Soyad zorunludur",
+                minLength: {
+                  value: 3,
+                  message: "Ad Soyad en az 3 karakter olmalıdır",
+                },
+              }}
               render={({ field, fieldState }) => (
                 <>
                   <input
