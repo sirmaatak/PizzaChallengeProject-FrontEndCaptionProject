@@ -57,7 +57,6 @@ const OrderPizza = ({ onSuccess }) => {
 
   // form submit edildiginde yapilacaklar
   const onSubmit = async (data) => {
-    const apiKey = "reqres-free-v1";
     const orderData = {
       ...data,
       quantity,
@@ -65,18 +64,18 @@ const OrderPizza = ({ onSuccess }) => {
     };
 
     try {
-      // const response = await axios.post(
-      // "https://reqres.in/api/users",
-      //orderData,
-      //{
-      //  headers: {
-      //  "Content-Type": "application/json",
-      // Authorization: `Bearer ${apiKey}`,
-      // },
-      // }
-      // );
+      const response = await axios.post(
+        "https://reqres.in/api/users",
+        orderData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "reqres-free-v1",
+          },
+        }
+      );
 
-      //console.log("Sipariş Özeti:", response.data);
+      console.log("Sipariş Özeti:", response.data);
       toast.success("Sipariş başarıyla alındı!");
       onSuccess();
     } catch (error) {
