@@ -3,7 +3,7 @@ import logo from "../assets/images/iteration-1-images/logo.svg";
 const Success = () => {
   return (
     <div className="flex flex-col h-screen bg-[#CE2829] text-white">
-      {/* Logo en üstte */}
+      {/* logo */}
       <div className="flex justify-center mt-20">
         <img
           src={logo}
@@ -12,7 +12,7 @@ const Success = () => {
         />
       </div>
 
-      {/* Orta içerik */}
+      {/* icerik */}
       <div className="flex flex-col items-center justify-center flex-grow text-center">
         <h1 className="text-4xl  font-bold mb-7 ">TEBRİKLER!</h1>
         <h1 className="text-4xl  font-bold mb-7 ">SİPARİŞİNİZ ALINDI!</h1>
