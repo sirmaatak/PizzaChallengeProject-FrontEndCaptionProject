@@ -16,23 +16,19 @@
     @apply block w-full p-2 border border-gray-300 rounded;
   }
   .error-text {
-    @apply text-red-500 text-sm mt-10;
+    @apply text-red-500 text-sm mt-5;
   }
-  /* index.css */
-.btn{
-  @apply bg-[#FDC913] text-black;
+ 
+.btn-quantity{
+  @apply  w-10 h-10 flex-shrink-0 flex items-center justify-center bg-[#FDC913] hover:bg-yellow-500 rounded-lg text-xl font-bold
 }
-
 .btn-primary {
-  @apply w-full font-semibold py-2 px-4 rounded-lg 
-         hover:bg-yellow-500 
+  @apply w-full font-semibold py-2 px-4 rounded-lg mt-10 row-end-3
+         bg-[#FDC913] hover:bg-yellow-500
          disabled:bg-gray-300 disabled:text-gray-500;
 }
-
-.btn-counter {
-  @apply w-10 h-10 font-bold rounded-lg 
-          hover:bg-yellow-500 
-         flex items-center justify-center;
+.btn-home{
+    @apply  px-6 py-2 rounded-lg font-semibold bg-[#FDC913]  hover:bg-yellow-500 transition
 }
 
   .section-title {

@@ -96,18 +96,23 @@ const OrderPizza = () => {
       <div className="max-w-2xl mx-auto px-4 py-8 flex flex-wrap items-center text-center">
         {/* Başlık */}
         <div className="justify-center text-center mt-4">
-          <h5 className="text-xl font-semibold mt-7">
+          <h5 className="label-left text-xl font-semibold mt-7 ">
             Position Absolute Acı Pizza
           </h5>
           <div className="grid grid-cols-3 gap-4 mt-6">
-            <p className="text-xl font-bold mt-9">85.50₺</p>
+            <p className="label-left text-xl font-bold mt-9">85.50₺</p>
             <p className="text-gray-500 place-self-end">4.9</p>
             <p className="text-gray-500 place-self-end">200</p>
           </div>
 
-          <p className="mt-4 text-gray-600 text-sm">
+          <p className="label-left mt-4 text-gray-600 text-sm">
             FrontEnd Dev olarak hala position:absolute kullaniyorsan bu cok aci
-            pizza tam sana gore...
+            pizza tam sana gore. Pizza, domates, peynir ve genellikle cesitli
+            diger malzemelerle kaplanmis, daha sonra geleneksel olarak odun
+            atesinde bir firinda yuksek sicaklikta pisirilen, genellikle
+            yuvarlak, duzlestirilmis mayali bugday bazli hamurdan olusan Italyan
+            kokenli lezzetli bir yemektir. Kucuk bir pizzaya bazen pizzetta
+            denir.
           </p>
         </div>
 
@@ -120,7 +125,9 @@ const OrderPizza = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Boyut */}
             <div className="text-left">
-              <label className="block font-semibold mb-2">Boyut Seç *</label>
+              <label className="block font-semibold mb-2 pb-3">
+                Boyut Seç *
+              </label>
               <Controller
                 control={control}
                 name="size"
@@ -154,7 +161,9 @@ const OrderPizza = () => {
 
             {/* Hamur */}
             <div className="text-left">
-              <label className="block font-semibold mb-2">Hamur Seç *</label>
+              <label className="block font-semibold mb-2 pb-3">
+                Hamur Seç *
+              </label>
               <Controller
                 control={control}
                 name="dough"
@@ -166,16 +175,14 @@ const OrderPizza = () => {
                   <>
                     <select
                       {...field}
-                      className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-red-400"
+                      className="w-full border border-gray-300 rounded-lg p-2"
                     >
                       <option value="Hamur Kalınlığı">Hamur Kalınlığı</option>
                       <option value="İnce">İnce</option>
                       <option value="Kalın">Kalın</option>
                     </select>
                     {fieldState.error && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {fieldState.error.message}
-                      </p>
+                      <p className="error-text">{fieldState.error.message}</p>
                     )}
                   </>
                 )}
@@ -186,7 +193,7 @@ const OrderPizza = () => {
           {/* Ek Malzemeler */}
           <div className="text-left">
             <p className="text-lg font-semibold">Ek Malzemeler</p>
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-sm text-gray-600 mb-2 py-5">
               En fazla 10 malzeme seçebilirsiniz. 5₺
             </p>
             <Controller
@@ -254,7 +261,7 @@ const OrderPizza = () => {
                     {...field}
                     type="text"
                     placeholder="Adınızı ve Soyadınızı girin"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-400"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2"
                   />
                   {fieldState.error && (
                     <p className="text-red-500 text-sm mt-1">
@@ -276,7 +283,7 @@ const OrderPizza = () => {
                 <textarea
                   {...field}
                   placeholder="Siparişinize eklemek istediğiniz bir not var mı?"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-400"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2"
                 />
               )}
             />
@@ -292,7 +299,7 @@ const OrderPizza = () => {
               <button
                 type="button"
                 onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
-                className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 rounded-lg text-xl font-bold"
+                className="btn-quantity"
               >
                 −
               </button>
@@ -300,32 +307,28 @@ const OrderPizza = () => {
               <button
                 type="button"
                 onClick={() => setQuantity(quantity + 1)}
-                className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 rounded-lg text-xl font-bold"
+                className="btn-quantity"
               >
                 +
               </button>
             </div>
 
             {/* Toplam */}
-            <div className="w-full md:w-2/3 lg:w-1/2 bg-white border border-gray-200 shadow-md rounded-lg p-6 text-center mt-6 md:mt-0">
-              <h6 className="text-lg font-bold mb-4 text-gray-800">
+            <div className="w-full md:w-2/3 lg:w-1/2 bg-white border border-gray-200 shadow-md rounded-lg  text-center mt-6 md:mt-0">
+              <h6 className="text-lg font-bold mb-4 text-gray-800 px-6 pt-6">
                 Sipariş Toplamı
               </h6>
               <div className="flex justify-between items-center mb-2">
-                <span className="text-gray-600">Seçimler:</span>
-                <span className="text-gray-800">
+                <span className="text-gray-600 px-6">Seçimler:</span>
+                <span className="text-gray-800 px-6 ">
                   {(watchExtras.length * 5 * quantity).toFixed(2)}₺
                 </span>
               </div>
-              <div className="flex justify-between items-center text-red-600">
+              <div className="flex justify-between items-center text-red-600 px-6">
                 <span>Toplam:</span>
                 <span>{total.toFixed(2)}₺</span>
               </div>
-              <button
-                type="submit"
-                disabled={!isValid}
-                className="mt-4 w-full bg-red-600 text-white font-bold py-2 rounded-lg hover:bg-red-700 disabled:opacity-50"
-              >
+              <button type="submit" disabled={!isValid} className="btn-primary">
                 Sipariş Ver
               </button>
             </div>
