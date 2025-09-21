@@ -65,18 +65,18 @@ const OrderPizza = ({ onSuccess }) => {
     };
 
     try {
-      const response = await axios.post(
-        "https://reqres.in/api/users",
-        orderData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
+      // const response = await axios.post(
+      // "https://reqres.in/api/users",
+      //orderData,
+      //{
+      //  headers: {
+      //  "Content-Type": "application/json",
+      // Authorization: `Bearer ${apiKey}`,
+      // },
+      // }
+      // );
 
-      console.log("Sipariş Özeti:", response.data);
+      //console.log("Sipariş Özeti:", response.data);
       toast.success("Sipariş başarıyla alındı!");
       onSuccess();
     } catch (error) {
@@ -165,11 +165,13 @@ const OrderPizza = ({ onSuccess }) => {
                         className="inline-flex items-center space-x-2"
                       >
                         <input
+                          id={size}
                           type="radio"
                           value={size}
                           checked={field.value === size}
                           onChange={(e) => field.onChange(e.target.value)}
                           className="w-4 h-4 text-red-600"
+                          data-cy={size}
                         />
                         <span>{size}</span>
                       </label>
@@ -203,7 +205,9 @@ const OrderPizza = ({ onSuccess }) => {
                       className="w-full border border-gray-300 rounded-lg p-2"
                     >
                       <option value="Hamur Kalınlığı">Hamur Kalınlığı</option>
-                      <option value="İnce">İnce</option>
+                      <option value="İnce" data-cy="ince">
+                        İnce
+                      </option>
                       <option value="Kalın">Kalın</option>
                     </select>
                     {fieldState.error && (
@@ -236,14 +240,15 @@ const OrderPizza = ({ onSuccess }) => {
               render={({ field, fieldState }) => (
                 <>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {ingredientsList.map((item) => {
+                    {ingredientsList.map((item, index) => {
                       const checked = field.value?.includes(item);
                       return (
                         <label
-                          key={item}
+                          key={index}
                           className="flex items-center space-x-2"
                         >
                           <input
+                            id={item}
                             type="checkbox"
                             value={item}
                             checked={checked}
@@ -257,6 +262,7 @@ const OrderPizza = ({ onSuccess }) => {
                               });
                             }}
                             className="w-4 h-4 text-red-600"
+                            data-cy={"extras-" + index}
                           />
                           <span className="text-gray-800">{item}</span>
                         </label>
@@ -293,6 +299,7 @@ const OrderPizza = ({ onSuccess }) => {
                     type="text"
                     placeholder="Adınızı ve Soyadınızı girin"
                     className="w-full border border-gray-300 rounded-lg px-3 py-2"
+                    data-cy="name-input"
                   />
                   {fieldState.error && (
                     <p className="text-red-500 text-sm mt-1">
@@ -359,7 +366,12 @@ const OrderPizza = ({ onSuccess }) => {
                 <span>Toplam:</span>
                 <span>{total.toFixed(2)}₺</span>
               </div>
-              <button type="submit" disabled={!isValid} className="btn-primary">
+              <button
+                type="submit"
+                disabled={!isValid}
+                className="btn-primary"
+                data-cy="order-button"
+              >
                 Sipariş Ver
               </button>
             </div>

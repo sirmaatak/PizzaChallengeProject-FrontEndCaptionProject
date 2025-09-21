@@ -16,7 +16,7 @@ const Home = ({ goToOrder }) => {
       </h1>
 
       {/* Siparis verme sayfasina git butonu */}
-      <button className="btn-home" onClick={goToOrder}>
+      <button className="btn-home" onClick={goToOrder} data-cy="home-button">
         ACIKTIM
       </button>
     </div>
