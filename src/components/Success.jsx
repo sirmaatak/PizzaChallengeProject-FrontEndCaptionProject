@@ -51,7 +51,7 @@ const Success = ({ summary }) => {
             </div>
 
             {/* Sipariş Toplamı Kartı */}
-            <div className="my-8 p-6 w-full max-w-xs border border-white/40 rounded-lg text-left">
+            <div className="my-10 p-6 w-full max-w-3xs border border-white/40 rounded-lg text-left">
               <h6 className="mb-4 font-semibold text-center">
                 Sipariş Toplamı
               </h6>
