@@ -58,4 +58,75 @@
   .transparan-label {
   @apply text-white/70;
 }
+ .home-main {
+  @apply bg-[#FAF7F2]
 }
+}
+
+  @layer utilities {
+  .insta {
+    @apply h-16 w-full rounded bg-no-repeat bg-cover bg-center;
+  }
+
+  .insta-1 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-0.png");
+  }
+
+  .insta-2 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-1.png");
+  }
+
+  .insta-3 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-2.png");
+  }
+
+  .insta-4 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-3.png");
+  }
+
+  .insta-5 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-4.png");
+  }
+
+  .insta-6 {
+    background-image: url("./assets/images/iteration-2-images/footer/insta/li-5.png");
+  }
+   .footer-icon {
+    @apply inline-block h-4 w-4 mr-2 bg-no-repeat bg-contain align-middle;
+  }
+
+  .icon-location {
+    background-image: url("./assets/images/iteration-2-images/footer/icons/icon-1.png");
+  }
+
+  .icon-mail {
+    background-image: url("./assets/images/iteration-2-images/footer/icons/icon-2.png");
+  }
+
+  .icon-phone {
+    background-image: url("./assets/images/iteration-2-images/footer/icons/icon-3.png");
+  }
+  
+  .bg-pizza {
+    background-image: url('./assets/images/iteration-2-images/cta/kart-1.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .bg-burger {
+    background-image: url('./assets/images/iteration-2-images/cta/kart-2.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .bg-courier {
+    background-image: url('./assets/images/iteration-2-images/cta/kart-3.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .container-images{
+   @apply text-white rounded-2xl p-6 flex flex-col justify-between bg-cover
+  }
+}
+
+
+
+
