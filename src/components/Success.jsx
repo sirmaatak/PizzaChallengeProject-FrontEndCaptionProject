@@ -15,10 +15,11 @@ const Success = ({ summary }) => {
       {/* İçerik */}
       <div className="flex flex-col items-center justify-center flex-grow text-center">
         {/* Başlıklar */}
-        <div className="my-10">
-          <h1 className="text-3xl mb-2 satisfy-regular">lezzetin yolda</h1>
-          <h1 className="text-5xl font-bold mb-8 roboto-condensed-myFont">
-            SİPARİŞ ALINDI
+        <div className="my-10 text-center">
+          <h1 className="text-3xl my-3 satisfy-regular">lezzetin yolda</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-8 roboto-condensed-myFont">
+            <span className="block sm:inline my-2">SİPARİŞ</span>{" "}
+            <span className="block sm:inline my-2">ALINDI ! </span>
           </h1>
         </div>
 
