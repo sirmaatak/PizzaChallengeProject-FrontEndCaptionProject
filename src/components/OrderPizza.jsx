@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../assets/images/iteration-1-images/logo.svg";
 import axios from "axios";
+import { Check } from "lucide-react";
 
 const OrderPizza = ({ onSuccess }) => {
   const ingredientsList = [
@@ -157,26 +158,24 @@ const OrderPizza = ({ onSuccess }) => {
                 name="size"
                 rules={{ required: "Lütfen bir boyut seçin" }}
                 render={({ field, fieldState }) => (
-                  <div className="flex flex-col space-y-2">
-                    {["Küçük", "Orta", "Büyük"].map((size) => (
-                      <label
+                  <div className="flex space-x-4">
+                    {["Small", "Medium", "Large"].map((size) => (
+                      <button
+                        type="button"
                         key={size}
-                        className="inline-flex items-center space-x-2"
+                        onClick={() => field.onChange(size)}
+                        className={`w-16 h-16 flex items-center justify-center rounded-full border font-semibold transition
+              ${
+                field.value === size
+                  ? "bg-red-600 text-white border-red-600"
+                  : "bg-white text-gray-700 border-gray-300"
+              }`}
                       >
-                        <input
-                          id={size}
-                          type="radio"
-                          value={size}
-                          checked={field.value === size}
-                          onChange={(e) => field.onChange(e.target.value)}
-                          className="w-4 h-4 text-red-600"
-                          data-cy={size}
-                        />
-                        <span>{size}</span>
-                      </label>
+                        {size[0]} {/* boyutun sadece bas harfi gozuksun  */}
+                      </button>
                     ))}
                     {fieldState.error && (
-                      <p className="text-red-500 text-sm mt-1">
+                      <p className="text-red-500 text-sm mt-2 w-full">
                         {fieldState.error.message}
                       </p>
                     )}
@@ -221,9 +220,10 @@ const OrderPizza = ({ onSuccess }) => {
           {/* Ek Malzemeler */}
           <div className="text-left">
             <p className="text-lg font-semibold">Ek Malzemeler</p>
-            <p className="text-sm text-gray-600 mb-2 py-5">
+            <p className="text-sm text-gray-600 mb-2 py-2">
               En fazla 10 malzeme seçebilirsiniz. 5₺
             </p>
+
             <Controller
               control={control}
               name="extras"
@@ -238,16 +238,16 @@ const OrderPizza = ({ onSuccess }) => {
               }}
               render={({ field, fieldState }) => (
                 <>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                     {ingredientsList.map((item, index) => {
                       const checked = field.value?.includes(item);
                       return (
                         <label
                           key={index}
-                          className="flex items-center space-x-2"
+                          className="flex items-center space-x-3 cursor-pointer select-none relative"
                         >
+                          {/* tiklama yapabilmek icin gorunmez input kullanildi */}
                           <input
-                            id={item}
                             type="checkbox"
                             value={item}
                             checked={checked}
@@ -260,14 +260,30 @@ const OrderPizza = ({ onSuccess }) => {
                                 shouldValidate: true,
                               });
                             }}
-                            className="w-4 h-4 text-red-600"
-                            data-cy={"extras-" + index}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                           />
-                          <span className="text-gray-800">{item}</span>
+
+                          {/* kutu */}
+                          <div
+                            className={`relative flex items-center justify-center w-10 h-10 rounded-sm border transition
+                    ${
+                      checked
+                        ? "bg-yellow-400 border-yellow-500"
+                        : "bg-white border-gray-300 hover:bg-gray-50"
+                    }`}
+                          >
+                            {checked && (
+                              <Check className="w-6 h-6 text-black" /> //lucide-react kutuphanesinden check ikonu eklendi
+                            )}
+                          </div>
+
+                          {/* Yazı */}
+                          <span className="text-sm text-gray-800">{item}</span>
                         </label>
                       );
                     })}
                   </div>
+
                   {fieldState.error && (
                     <p className="text-red-500 text-sm mt-2">
                       {fieldState.error.message}

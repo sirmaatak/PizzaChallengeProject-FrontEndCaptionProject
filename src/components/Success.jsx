@@ -36,7 +36,7 @@ const Success = ({ summary }) => {
                   Ad Soyad: <span className="text-white">{summary.name}</span>
                 </li>
                 <li className="text-white/70">
-                  Boyut: <span className="text-white">{summary.size}</span>
+                  Boyut: <span className="text-white">{summary.size[0]}</span>
                 </li>
                 <li className="text-white/70">
                   Hamur: <span className="text-white">{summary.dough}</span>
