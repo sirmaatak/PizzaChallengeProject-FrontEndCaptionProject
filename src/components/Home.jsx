@@ -7,6 +7,9 @@ import nav_3 from "../assets/images/iteration-2-images/icons/nav_3.svg";
 import nav_4 from "../assets/images/iteration-2-images/icons/nav_4.svg";
 import nav_5 from "../assets/images/iteration-2-images/icons/nav_5.svg";
 import nav_6 from "../assets/images/iteration-2-images/icons/nav_6.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 const Home = ({ goToOrder }) => {
   return (
     <div id="container">
@@ -150,14 +153,14 @@ const Home = ({ goToOrder }) => {
         </div>
       </main>
 
-      <footer class="bg-black text-white pt-12 pb-8">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <footer className="bg-black text-white pt-12 pb-8">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/** <!-- Logo & İletişim --> */}
           <div>
             <img
               src={footer_logo}
               alt="Teknolojik Yemekler Logo"
-              class="h-12 mb-4"
+              className="h-12 mb-4"
             />
             <p className="flex items-center text-sm text-gray-300">
               <span className="footer-icon icon-location"></span>
@@ -177,35 +180,35 @@ const Home = ({ goToOrder }) => {
 
           {/**ortadaki menu kismi  */}
           <div>
-            <h5 class="font-semibold">Siccacik Menuler</h5>
-            <ul class="mt-4 space-y-2 text-sm text-gray-300">
+            <h5 className="font-semibold">Siccacik Menuler</h5>
+            <ul className="mt-4 space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   Terminal Pizza
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   5 Kisilik Hackathlon Pizza
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   useEffect Tavuklu Pizza
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   Beyaz Console Frosty
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   Testler Gecti Mutlu Burger
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-white">
+                <a href="#" className="hover:text-white">
                   Position Absolute Aci Pizza
                 </a>
               </li>
@@ -228,8 +231,9 @@ const Home = ({ goToOrder }) => {
 
         {/** en alt kisim >*/}
 
-        <div class="max-w-6xl mx-auto px-6 mt-8 border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+        <div className="max-w-6xl mx-auto px-6 mt-8 border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <p>© 2023 Teknolojik Yemekler.</p>
+          <FontAwesomeIcon icon={faTwitter} />
         </div>
       </footer>
     </div>
