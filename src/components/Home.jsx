@@ -21,8 +21,12 @@ const Home = ({ goToOrder }) => {
         <img src={logo} alt="Teknolojik Yemekler" className="h-12 mb-6 mt-20" />
 
         {/* Kod aciktirir... yazisi  */}
-        <h1 className="text-4xl font-bold text-center leading-snug mb-6 drop-shadow-lg roboto-condensed-myFont">
-          KOD ACIKTIRIR <br /> PIZZA, DOYURUR
+        <h1 className="text-3xl sm:text-4xl font-bold text-center leading-snug mb-6 drop-shadow-lg roboto-condensed-myFont">
+          <span className="block sm:inline">KOD</span>{" "}
+          <span className="block sm:inline">ACIKTIRIR</span>
+          <br className="hidden sm:block" />
+          <span className="block sm:inline">PIZZA,</span>{" "}
+          <span className="block sm:inline">DOYURUR</span>
         </h1>
 
         {/* Siparis verme sayfasina git butonu */}
@@ -53,7 +57,7 @@ const Home = ({ goToOrder }) => {
       <main className="home-main">
         <div className="container mx-auto py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 w-2/3 mx-auto py-20">
-            {/* Sol büyük kutu */}
+            {/* sol büyük kutu */}
             <div className="bg-red-600 container-images md:row-span-2 bg-pizza">
               <h2 className="text-2xl font-bold mb-4">Özel Lezzetus</h2>
               <p className="text-sm mb-6">Position Absolute Acı Burger</p>
@@ -62,7 +66,7 @@ const Home = ({ goToOrder }) => {
               </button>
             </div>
 
-            {/* Sağ üst */}
+            {/* sağ üst */}
             <div className="bg-gray-900 container-images bg-burger">
               <h2 className="text-xl font-bold mb-4">
                 Hackathlon <br /> Burger Menü
@@ -72,7 +76,7 @@ const Home = ({ goToOrder }) => {
               </button>
             </div>
 
-            {/* Sağ alt */}
+            {/* sağ alt */}
             <div className="bg-yellow-100 text-gray-900 container-images bg-courier">
               <h2 className="text-xl font-bold mb-4">
                 Çoooook hızlı npm gibi kurye
@@ -155,7 +159,7 @@ const Home = ({ goToOrder }) => {
 
       <footer className="bg-black text-white pt-12 pb-8">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/** <!-- Logo & İletişim --> */}
+          {/** logo ve İletişim kismi */}
           <div>
             <img
               src={footer_logo}
@@ -230,7 +234,6 @@ const Home = ({ goToOrder }) => {
         </div>
 
         {/** en alt kisim >*/}
-
         <div className="max-w-6xl mx-auto px-6 mt-8 border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <p>© 2023 Teknolojik Yemekler.</p>
           <FontAwesomeIcon icon={faTwitter} />
