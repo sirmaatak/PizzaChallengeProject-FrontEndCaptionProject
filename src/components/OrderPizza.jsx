@@ -22,8 +22,10 @@ const OrderPizza = ({ onSuccess }) => {
     "Sogan",
     "Sarimsak",
   ];
-
+  //sayac kac tane menu siparisi tutuyor ,bunu tutmak icin setter
   const [quantity, setQuantity] = useState(1);
+
+  //toplam fiyati hesaplamak icin yazdigim setter
   const [total, setTotal] = useState(85.5);
 
   const {
@@ -43,11 +45,8 @@ const OrderPizza = ({ onSuccess }) => {
     },
   });
 
-  const watchSize = watch("size", "Küçük");
-  const watchDough = watch("dough", "Hamur Kalınlığı");
+  //anlik fiyat hesaplamasi yapabilmek icin extras 'in anlik olarak degisimini izliyorum
   const watchExtras = watch("extras", []);
-  const watchNote = watch("note", "");
-  const watchName = watch("name", "");
 
   const calculateTotal = () => {
     let newTotal = 85.5;
@@ -85,14 +84,15 @@ const OrderPizza = ({ onSuccess }) => {
     }
   };
 
+  //extra secimi ve menu adeti degisirse total fiyati hesaplamak icin useEffect kullandim
   useEffect(() => {
     calculateTotal();
-  }, [watchSize, watchDough, watchExtras, quantity]);
+  }, [watchExtras, quantity]);
 
   return (
     <>
       {/* Header */}
-      <header className="w-screen bg-red-600 shadow-md">
+      <header className="w-screen bg-red-600">
         <div className="py-6">
           <img src={logo} alt="Teknolojik Yemekler" className="h-12 mx-auto" />
         </div>
@@ -277,7 +277,7 @@ const OrderPizza = ({ onSuccess }) => {
                             )}
                           </div>
 
-                          {/* Yazı */}
+                          {/* checkboxlarin ismi yani malzemeler */}
                           <span className="text-sm text-gray-800">{item}</span>
                         </label>
                       );

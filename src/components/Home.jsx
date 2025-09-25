@@ -9,6 +9,8 @@ import nav_5 from "../assets/images/iteration-2-images/icons/nav_5.svg";
 import nav_6 from "../assets/images/iteration-2-images/icons/nav_6.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = ({ goToOrder }) => {
   return (
@@ -30,7 +32,17 @@ const Home = ({ goToOrder }) => {
         </h1>
 
         {/* Siparis verme sayfasina git butonu */}
-        <button className="btn-home" onClick={goToOrder} data-cy="home-button">
+        <button
+          className="btn-home"
+          onClick={() => {
+            toast.info("Siparis sayfasina hosgeldiniz:)", {
+              theme: "colored",
+              autoClose: 2000,
+            });
+            goToOrder();
+          }}
+          data-cy="home-button"
+        >
           ACIKTIM
         </button>
       </header>
