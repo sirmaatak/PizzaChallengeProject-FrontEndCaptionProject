@@ -91,7 +91,7 @@ const OrderPizza = ({ onSuccess }) => {
 
   return (
     <>
-      {/* Header */}
+      {/* header kismi */}
       <header className="w-screen bg-red-600">
         <div className="py-6">
           <img src={logo} alt="Teknolojik Yemekler" className="h-12 mx-auto" />
@@ -117,9 +117,9 @@ const OrderPizza = ({ onSuccess }) => {
         </div>
       </header>
 
-      {/* İçerik */}
+      {/* içerigin tamami */}
       <div className="max-w-2xl mx-auto px-4 py-8 flex flex-wrap items-center text-center">
-        {/* Başlık */}
+        {/* başlık kismi */}
         <div className="justify-center text-center mt-4">
           <h5 className="label-left text-xl font-semibold mt-7 ">
             Position Absolute Acı Pizza
@@ -141,14 +141,14 @@ const OrderPizza = ({ onSuccess }) => {
           </p>
         </div>
 
-        {/* Form */}
+        {/* basligin alti form icinde tutuluyor */}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-12 mt-20 w-full"
         >
-          {/* Boyut ve Hamur */}
+          {/* boyut ve hamur kisminin oldugu div  */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Boyut */}
+            {/* boyut */}
             <div className="text-left">
               <label className="block font-semibold mb-2 pb-3">
                 Boyut Seç *
@@ -166,6 +166,7 @@ const OrderPizza = ({ onSuccess }) => {
                         onClick={() => field.onChange(size)}
                         className={`w-16 h-16 flex items-center justify-center rounded-full border font-semibold transition
               ${
+                //eger field'in tuttugu deger map(size)'a esitse secilmis demektir.secilenin arkaplan rengi kirmizi olur
                 field.value === size
                   ? "bg-red-600 text-white border-red-600"
                   : "bg-white text-gray-700 border-gray-300"
@@ -184,7 +185,7 @@ const OrderPizza = ({ onSuccess }) => {
               />
             </div>
 
-            {/* Hamur */}
+            {/* hamur */}
             <div className="text-left">
               <label className="block font-semibold mb-2 pb-3">
                 Hamur Seç *
@@ -217,13 +218,9 @@ const OrderPizza = ({ onSuccess }) => {
             </div>
           </div>
 
-          {/* Ek Malzemeler */}
+          {/* bu kisim ekstra malzemelerin oldugu kisim  */}
           <div className="text-left">
             <p className="text-lg font-semibold">Ek Malzemeler</p>
-            <p className="text-sm text-gray-600 mb-2 py-2">
-              En fazla 10 malzeme seçebilirsiniz. 5₺
-            </p>
-
             <Controller
               control={control}
               name="extras"
@@ -294,7 +291,7 @@ const OrderPizza = ({ onSuccess }) => {
             />
           </div>
 
-          {/* Ad Soyad */}
+          {/*ad-soyad kismi*/}
           <div className="text-left">
             <label className="block font-semibold mb-2">Ad Soyad *</label>
             <Controller
@@ -326,7 +323,7 @@ const OrderPizza = ({ onSuccess }) => {
             />
           </div>
 
-          {/* Sipariş Notu */}
+          {/* siparis notu kismi */}
           <div className="text-left">
             <label className="block font-semibold mb-2">Sipariş Notu</label>
             <Controller
@@ -342,12 +339,12 @@ const OrderPizza = ({ onSuccess }) => {
             />
           </div>
 
-          {/* Çizgi */}
+          {/* duz cizgi */}
           <div className="border-t border-gray-300 pt-3"></div>
 
-          {/* Sayaç + Toplam */}
+          {/* sayac yani menu adeti kismi ile siparis toplaminin oldugu kisim  */}
           <div className="mt-6 flex flex-col md:flex-row justify-between items-start w-full">
-            {/* Sayaç */}
+            {/* sayac kismi  */}
             <div className="flex items-center space-x-4">
               <button
                 type="button"
@@ -366,7 +363,7 @@ const OrderPizza = ({ onSuccess }) => {
               </button>
             </div>
 
-            {/* Toplam */}
+            {/* sipris toplami kismi  */}
             <div className="w-full md:w-2/3 lg:w-1/2 bg-white border border-gray-200 shadow-md rounded-lg  text-center mt-6 md:mt-0">
               <h6 className="text-lg font-bold mb-4 text-gray-800 px-6 pt-6">
                 Sipariş Toplamı

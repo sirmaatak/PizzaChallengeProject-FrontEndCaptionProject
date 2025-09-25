@@ -3,7 +3,7 @@ import logo from "../assets/images/iteration-1-images/logo.svg";
 const Success = ({ summary }) => {
   return (
     <div className="flex flex-col min-h-screen bg-[#CE2829] text-white">
-      {/* Logo */}
+      {/* logonun oldugu kisim */}
       <div className="flex justify-center my-12">
         <img
           src={logo}
@@ -12,9 +12,9 @@ const Success = ({ summary }) => {
         />
       </div>
 
-      {/* İçerik */}
+      {/* icerik bolumu  */}
       <div className="flex flex-col items-center justify-center flex-grow text-center">
-        {/* Başlıklar */}
+        {/* basliklar  */}
         <div className="my-10 text-center">
           <h1 className="text-3xl my-3 satisfy-regular">lezzetin yolda</h1>
           <h1 className="text-4xl sm:text-5xl font-bold mb-8 roboto-condensed-myFont">
@@ -25,7 +25,7 @@ const Success = ({ summary }) => {
 
         <hr className="w-1/3 border-white/60 mb-10" />
 
-        {/* Sipariş Özeti */}
+        {/* siparis ozetinin tutuldugu kisim siparis summary olarak OrderPage sf dan prop olarak alinir  */}
         {summary && (
           <>
             <div className="font-semibold my-7">
@@ -51,7 +51,7 @@ const Success = ({ summary }) => {
               </ul>
             </div>
 
-            {/* Sipariş Toplamı Kartı */}
+            {/* siparis toplaminin oldugu kisim  */}
             <div className="my-10 p-6 w-full max-w-3xs border border-white/40 rounded-lg text-left">
               <h6 className="mb-4 font-semibold text-center">
                 Sipariş Toplamı

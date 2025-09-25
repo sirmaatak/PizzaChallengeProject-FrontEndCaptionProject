@@ -19,19 +19,20 @@ const Home = ({ goToOrder }) => {
         className="relative flex flex-col items-center justify-start h-screen text-white bg-cover bg-center"
         style={{ backgroundImage: `url(${homeBanner})` }}
       >
-        {/* Logo Burada  */}
+        {/* logo kismi  */}
         <img src={logo} alt="Teknolojik Yemekler" className="h-12 mb-6 mt-20" />
 
         {/* Kod aciktirir... yazisi  */}
         <h1 className="text-3xl sm:text-4xl font-bold text-center leading-snug mb-6 drop-shadow-lg roboto-condensed-myFont">
           <span className="block sm:inline">KOD</span>{" "}
           <span className="block sm:inline">ACIKTIRIR</span>
-          <br className="hidden sm:block" />
+          <br className="hidden sm:block" />{" "}
+          {/**mobil ekranda her satirda 1 kelime gorunmesi icin satir basi ekleniyor */}
           <span className="block sm:inline">PIZZA,</span>{" "}
           <span className="block sm:inline">DOYURUR</span>
         </h1>
 
-        {/* Siparis verme sayfasina git butonu */}
+        {/* siparis verme sayfasina git butonu */}
         <button
           className="btn-home"
           onClick={() => {
