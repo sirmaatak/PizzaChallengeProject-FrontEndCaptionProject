@@ -13,6 +13,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = ({ goToOrder }) => {
+  //vercel de yuklenme sorunu cozmek icin tanimladim
+  const icons = [nav_1, nav_2, nav_3, nav_4, nav_5, nav_6];
+
   return (
     <div id="container">
       <header
@@ -122,44 +125,39 @@ const Home = ({ goToOrder }) => {
                 key={i}
                 className="flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium bg-white"
               >
-                <img
-                  src={`src/assets/images/iteration-2-images/icons/nav_${
-                    i + 1
-                  }.svg`}
-                ></img>{" "}
-                {item}
+                <img src={icons[i]} alt={item}></img> {item}
               </button>
             ))}
           </div>
 
           {/* 3'lu kart  */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-7 w-2/3 mx-auto">
-            <div className="bg-white rounded-2xl shadow p-4 text-center">
+            <div className="bg-white rounded-2xl  p-4 text-center">
               <img
                 alt="Terminal Pizza"
-                className="mx-auto h-40 object-contain mb-4 terminalPizza"
+                className="mx-auto h-40  mb-4 terminalPizza"
               />
               <h3 className="font-semibold">Terminal Pizza</h3>
               <p className="text-gray-500 text-sm">(200)</p>
               <p className="font-bold mt-2">60₺</p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow p-4 text-center">
+            <div className="bg-white rounded-2xl  p-4 text-center">
               <img
                 //src="src/assets/images/iteration-2-images/pictures/food-2.png"
                 alt="Position Absolute Acı Pizza"
-                className="mx-auto h-40 object-contain mb-4 positionPizza"
+                className="mx-auto h-40 mb-4 positionPizza"
               />
               <h3 className="font-semibold">Position Absolute Acı Pizza</h3>
               <p className="text-gray-500 text-sm">(829)</p>
               <p className="font-bold mt-2">85₺</p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow p-4 text-center">
+            <div className="bg-white rounded-2xl  p-4 text-center">
               <img
                 //src="src/assets/images/iteration-2-images/pictures/food-3.png"
                 alt="useEffect Tavuklu Burger"
-                className="mx-auto h-40 object-contain mb-4 burger"
+                className="mx-auto h-40  mb-4 burger"
               />
               <h3 className="font-semibold">useEffect Tavuklu Burger</h3>
               <p className="text-gray-500 text-sm">(462)</p>
