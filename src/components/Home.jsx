@@ -30,7 +30,7 @@ const Home = ({ goToOrder }) => {
           <span className="block sm:inline">KOD</span>{" "}
           <span className="block sm:inline">ACIKTIRIR</span>
           <br className="hidden sm:block" />{" "}
-          {/**mobil ekranda her satirda 1 kelime gorunmesi icin satir basi ekleniyor */}
+          {/**mobil ekranda her satirda 1 kelime gorunmesi icin satir basi gizleniyor */}
           <span className="block sm:inline">PIZZA,</span>{" "}
           <span className="block sm:inline">DOYURUR</span>
         </h1>
