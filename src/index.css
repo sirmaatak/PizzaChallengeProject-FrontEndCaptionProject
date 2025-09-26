@@ -129,6 +129,12 @@
   .terminalPizza{
     content:url("./assets/images/iteration-2-images/pictures/food-1.png");
 }
+.positionPizza{
+  content:url('./assets/images/iteration-2-images/pictures/food-2.png')
+}
+.burger{
+  content:url('./assets/images/iteration-2-images/pictures/food-3.png')
+}
 }
 
 

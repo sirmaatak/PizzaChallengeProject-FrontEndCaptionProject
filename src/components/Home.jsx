@@ -146,9 +146,9 @@ const Home = ({ goToOrder }) => {
 
             <div className="bg-white rounded-2xl shadow p-4 text-center">
               <img
-                src="src/assets/images/iteration-2-images/pictures/food-2.png"
+                //src="src/assets/images/iteration-2-images/pictures/food-2.png"
                 alt="Position Absolute Acı Pizza"
-                className="mx-auto h-40 object-contain mb-4"
+                className="mx-auto h-40 object-contain mb-4 positionPizza"
               />
               <h3 className="font-semibold">Position Absolute Acı Pizza</h3>
               <p className="text-gray-500 text-sm">(829)</p>
@@ -157,9 +157,9 @@ const Home = ({ goToOrder }) => {
 
             <div className="bg-white rounded-2xl shadow p-4 text-center">
               <img
-                src="src/assets/images/iteration-2-images/pictures/food-3.png"
+                //src="src/assets/images/iteration-2-images/pictures/food-3.png"
                 alt="useEffect Tavuklu Burger"
-                className="mx-auto h-40 object-contain mb-4"
+                className="mx-auto h-40 object-contain mb-4 burger"
               />
               <h3 className="font-semibold">useEffect Tavuklu Burger</h3>
               <p className="text-gray-500 text-sm">(462)</p>
