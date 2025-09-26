@@ -125,6 +125,10 @@
   .container-images{
    @apply text-white rounded-2xl p-6 flex flex-col justify-between bg-cover
   }
+
+  .terminalPizza{
+    content:url("./assets/images/iteration-2-images/pictures/food-1.png");
+}
 }
 
 

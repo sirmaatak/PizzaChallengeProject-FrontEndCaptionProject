@@ -136,11 +136,8 @@ const Home = ({ goToOrder }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-7 w-2/3 mx-auto">
             <div className="bg-white rounded-2xl shadow p-4 text-center">
               <img
-                src={
-                  "/src/assets/images/iteration-2-images/pictures/food-1.png"
-                }
                 alt="Terminal Pizza"
-                className="mx-auto h-40 object-contain mb-4"
+                className="mx-auto h-40 object-contain mb-4 terminalPizza"
               />
               <h3 className="font-semibold">Terminal Pizza</h3>
               <p className="text-gray-500 text-sm">(200)</p>
