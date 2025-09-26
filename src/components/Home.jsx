@@ -136,7 +136,7 @@ const Home = ({ goToOrder }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-7 w-2/3 mx-auto">
             <div className="bg-white rounded-2xl shadow p-4 text-center">
               <img
-                src="src/assets/images/iteration-2-images/pictures/food-1.png"
+                src={"src/assets/images/iteration-2-images/pictures/food-1.png"}
                 alt="Terminal Pizza"
                 className="mx-auto h-40 object-contain mb-4"
               />
