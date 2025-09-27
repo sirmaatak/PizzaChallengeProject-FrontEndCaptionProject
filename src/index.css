@@ -65,7 +65,7 @@
 
   @layer utilities {
   .insta {
-    @apply h-16 w-full rounded bg-no-repeat bg-cover bg-center;
+    @apply h-16 rounded  bg-cover bg-center;
   }
 
   .insta-1 {
@@ -92,7 +92,7 @@
     background-image: url("./assets/images/iteration-2-images/footer/insta/li-5.png");
   }
    .footer-icon {
-    @apply inline-block h-4 w-4 mr-2 bg-no-repeat bg-contain align-middle;
+    @apply  h-4 w-4 mr-2  bg-contain ;
   }
 
   .icon-location {

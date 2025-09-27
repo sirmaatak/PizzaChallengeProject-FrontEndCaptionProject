@@ -33,7 +33,7 @@ const OrderPizza = ({ onSuccess }) => {
     control,
     watch,
     setValue,
-    formState: { errors, isValid },
+    formState: { isValid },
   } = useForm({
     mode: "all",
     defaultValues: {
@@ -77,6 +77,7 @@ const OrderPizza = ({ onSuccess }) => {
 
       console.log("Sipariş Özeti:", response.data);
       toast.success("Bizi Tercih Ettiginiz Icin Tesekkur Ederiz!");
+      // success sf order bilgisini gondermek icin prop olarak aldigimiz onSuccess fonk calistiriyoruz.
       onSuccess(orderData);
     } catch (error) {
       console.error("Sipariş oluşturulamadı:", error);
@@ -120,7 +121,7 @@ const OrderPizza = ({ onSuccess }) => {
       {/* içerigin tamami */}
       <div className="max-w-2xl mx-auto px-4 py-8 flex flex-wrap items-center text-center">
         {/* başlık kismi */}
-        <div className="justify-center text-center mt-4">
+        <div className="justify-center  mt-4">
           <h5 className="label-left text-xl font-semibold mt-7 ">
             Position Absolute Acı Pizza
           </h5>
@@ -345,7 +346,7 @@ const OrderPizza = ({ onSuccess }) => {
           {/* sayac yani menu adeti kismi ile siparis toplaminin oldugu kisim  */}
           <div className="mt-6 flex flex-col md:flex-row justify-between items-start w-full">
             {/* sayac kismi  */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <button
                 type="button"
                 onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
@@ -364,17 +365,17 @@ const OrderPizza = ({ onSuccess }) => {
             </div>
 
             {/* sipris toplami kismi  */}
-            <div className="w-full md:w-2/3 lg:w-1/2 bg-white border border-gray-200 shadow-md rounded-lg  text-center mt-6 md:mt-0">
+            <div className="w-full md:w-2/3 lg:w-1/2 bg-white border border-gray-200  rounded-lg  text-center mt-6 md:mt-0">
               <h6 className="text-lg font-bold mb-4 text-gray-800 px-6 pt-6">
                 Sipariş Toplamı
               </h6>
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex justify-between  mb-2">
                 <span className="text-gray-600 px-6">Seçimler:</span>
                 <span className="text-gray-800 px-6 ">
                   {(watchExtras.length * 5 * quantity).toFixed(2)}₺
                 </span>
               </div>
-              <div className="flex justify-between items-center text-red-600 px-6">
+              <div className="flex justify-between text-red-600 px-6">
                 <span>Toplam:</span>
                 <span>{total.toFixed(2)}₺</span>
               </div>

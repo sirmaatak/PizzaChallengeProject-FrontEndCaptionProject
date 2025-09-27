@@ -17,7 +17,7 @@ const Home = ({ goToOrder }) => {
   const icons = [nav_1, nav_2, nav_3, nav_4, nav_5, nav_6];
 
   return (
-    <div id="container">
+    <body id="body">
       <header
         className="relative flex flex-col items-center justify-start h-screen text-white bg-cover bg-center"
         style={{ backgroundImage: `url(${homeBanner})` }}
@@ -43,7 +43,7 @@ const Home = ({ goToOrder }) => {
               theme: "colored",
               autoClose: 2000,
             });
-            goToOrder();
+            goToOrder(); //currentPage setteri order yaptik
           }}
           data-cy="home-button"
         >
@@ -51,7 +51,7 @@ const Home = ({ goToOrder }) => {
         </button>
       </header>
 
-      <nav className="grid grid-cols-3 sm:grid-cols-6 gap-1 py-6 bg-white w-2/3 mx-auto">
+      <nav className="grid grid-cols-3 md:grid-cols-6 gap-1 py-6 bg-white w-2/3 mx-auto">
         {[
           { img: nav_1, label: "YENİ! Kore" },
           { img: nav_2, label: "Pizza" },
@@ -131,7 +131,7 @@ const Home = ({ goToOrder }) => {
           </div>
 
           {/* 3'lu kart  */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-7 w-2/3 mx-auto">
+          <div className="grid grid-cols-1  md:grid-cols-3 gap-8 mt-7 w-2/3 mx-auto">
             <div className="bg-white rounded-2xl  p-4 text-center">
               <img
                 alt="Terminal Pizza"
@@ -249,7 +249,7 @@ const Home = ({ goToOrder }) => {
           <FontAwesomeIcon icon={faTwitter} />
         </div>
       </footer>
-    </div>
+    </body>
   );
 };
 
